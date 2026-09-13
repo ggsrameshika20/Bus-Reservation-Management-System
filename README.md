@@ -1,87 +1,163 @@
 # 🚌 Bus Reservation Management System
 
-A desktop-based Bus Reservation Management System developed using **C# Windows Forms, .NET Framework, MySQL, and Visual Studio**.
+A desktop-based **Bus Reservation Management System** developed as an academic group project using **C# Windows Forms, .NET Framework, MySQL, and Visual Studio**.
 
-This system provides separate modules for **Passengers and Administrators**, allowing users to search buses, reserve seats, manage payments, and view reservations.
+The system provides separate modules for **Passengers and Administrators**, supporting bus search, seat reservation, payment management, reservation tracking, user management, and reporting.
+
+---
 
 ## ✨ Features
 
 ### 👤 Passenger Module
-- User Registration and Login
-- Search buses by route
-- View available buses and travel details
-- Dynamic seat selection
-- Seat reservation
-- Payment management
-- Booking confirmation
-- View reservation history
-- View recent payments
-- Manage passenger profile
 
-### 🔐 Admin Module
-- Admin Dashboard
-- Manage Buses
-- Manage Reservations
-- Manage Users
-- Manage Payments
-- Process Refunds
-- Generate Reports
-- Manage reservation status and seat availability
+* User Registration and Login
+* Search buses by route
+* View bus and travel details
+* Dynamic seat selection
+* Seat reservation
+* Payment management
+* Booking confirmation
+* View reservation history
+* View recent payments
+* Manage passenger profile
+
+### 🔐 Administrator Module
+
+* Admin Dashboard
+* Manage buses
+* Manage reservations
+* Manage users
+* Manage payments
+* Process refunds
+* Generate reports
+* Manage reservation status
+* Manage seat availability
+
+---
 
 ## 🛠️ Technologies Used
 
-- **C#**
-- **Windows Forms**
-- **.NET Framework 4.7.2**
-- **MySQL**
-- **Visual Studio**
-- **iTextSharp** – PDF generation
+| Technology               | Purpose                 |
+| ------------------------ | ----------------------- |
+| **C#**                   | Application development |
+| **Windows Forms**        | Desktop user interface  |
+| **.NET Framework 4.7.2** | Application framework   |
+| **MySQL**                | Database management     |
+| **Visual Studio**        | Development environment |
+| **iTextSharp**           | PDF report generation   |
+
+---
 
 ## 🗄️ Database
 
 The system uses **MySQL** as the backend database.
 
-Main database functions include:
-- User management
-- Bus management
-- Reservation management
-- Seat availability
-- Payment records
-- Reservation history
+### Main Database Tables
 
-## 🖥️ System Modules
+* `users` – Stores passenger and administrator information
+* `buses` – Stores bus, route, and travel information
+* `reservations` – Stores reservation and booking details
+* `seat_availability` – Manages seat availability
+* `payments` – Stores payment and refund information
 
-**Passenger Side**
+---
 
-`Login → Search Bus → Select Seats → Payment → Booking Confirmation → Reservations`
+## 🖥️ System Workflow
 
-**Admin Side**
+### Passenger Side
 
-`Admin Dashboard → Buses → Reservations → Users → Payments → Reports`
+`Login / Register → Search Bus → Select Seats → Payment → Booking Confirmation → Reservations`
+
+### Administrator Side
+
+`Admin Dashboard → Manage Buses → Manage Reservations → Manage Users → Manage Payments → Reports`
+
+---
 
 ## 📸 Screenshots
 
-Screenshots of the system interface will be added here.
+Screenshots demonstrating the main features and user interfaces of the system will be added here.
+
+### Passenger Interface
+
+* Login & Registration
+* Passenger Dashboard
+* Bus Search
+* Seat Selection
+* Payment
+* Booking Confirmation
+* Reservation History
+* Passenger Profile
+
+### Administrator Interface
+
+* Admin Dashboard
+* Bus Management
+* Reservation Management
+* User Management
+* Payment Management
+* Reports
+
+---
 
 ## 🚀 How to Run
 
+### Prerequisites
+
+Make sure the following are installed:
+
+* **Visual Studio**
+* **.NET Framework 4.7.2**
+* **MySQL Server**
+* **MySQL Workbench** or another MySQL database management tool
+
+### Setup
+
 1. Clone or download this repository.
-2. Open the `.sln` file using **Visual Studio**.
-3. Configure the MySQL database.
-4. Import the required database.
-5. Update the database connection settings if required.
-6. Build and run the project.
+2. Open the `.sln` solution file in **Visual Studio**.
+3. Create the required MySQL database.
+4. Import the provided `.sql` database script.
+5. Update the database connection string according to your local MySQL configuration.
+6. Build the solution in Visual Studio.
+7. Run the application.
+
+> **Note:** Database credentials and connection settings may need to be updated according to your local environment.
+
+---
 
 ## 📚 Project Information
 
-This project was developed as an **academic group project** to demonstrate practical knowledge of desktop application development, database management, user interface design, and software development.
+This project was developed as an **academic group project** to demonstrate practical knowledge of:
 
-## 👩‍💻 Developer
+* Desktop application development
+* Object-oriented programming
+* Database management
+* CRUD operations
+* User interface design
+* Reservation and payment management
+* Software development and testing
+
+---
+
+## 👥 Project Team
+
+This system was developed collaboratively as a **group academic project** by undergraduate students of the **University of Ruhuna, Sri Lanka**.
+
+### My Contribution
 
 **SADUNI RAMESHIKA**
-
-ICT Undergraduate  
+ICT Undergraduate
 University of Ruhuna, Sri Lanka
+
+Contributed to the development of the **C# Windows Forms application, MySQL database designing and integration, user interface development, reservation and system workflow, and system testing**.
+
+---
+
+## 📌 Project Status
+
+**Completed Academic Project**
+
+The core passenger and administrator functionalities have been implemented as part of the academic project.
 
 ---
 
