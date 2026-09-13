@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{46873666-2D18-45DA-8E11-B043B1C90E6F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BusReservationSystem</RootNamespace>
+    <AssemblyName>BusReservationSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.6.2\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.32.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.32.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.5, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.5\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.3.8.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.3.8\lib\net462\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.3.8.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.3.8\lib\net462\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=9.7.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.9.7.0\lib\net462\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp-gdi, Version=1.50.4740.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharpAcroForm.1.50.4740\lib\net35\PdfSharp-gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting-gdi, Version=1.50.4740.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharpAcroForm.1.50.4740\lib\net35\PdfSharp.Charting-gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZstdSharp, Version=0.8.6.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZstdSharp.Port.0.8.6\lib\net462\ZstdSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookingConfirmation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingConfirmation.Designer.cs">
+      <DependentUpon>BookingConfirmation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CancelReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CancelReservation.Designer.cs">
+      <DependentUpon>CancelReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagePayments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagePayments.Designer.cs">
+      <DependentUpon>ManagePayments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageReservations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageReservations.Designer.cs">
+      <DependentUpon>ManageReservations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageUsers.Designer.cs">
+      <DependentUpon>ManageUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PassengerProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PassengerProfile.Designer.cs">
+      <DependentUpon>PassengerProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecentPayments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecentPayments.Designer.cs">
+      <DependentUpon>RecentPayments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageBusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageBusForm.Designer.cs">
+      <DependentUpon>ManageBusForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyReservationForm_history_.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyReservationForm_history_.Designer.cs">
+      <DependentUpon>MyReservationForm_history_.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentForm.Designer.cs">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReservationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReservationForm.Designer.cs">
+      <DependentUpon>ReservationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchBusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchBusForm.Designer.cs">
+      <DependentUpon>SearchBusForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserDashboard.Designer.cs">
+      <DependentUpon>UserDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserSession.cs" />
+    <EmbeddedResource Include="AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingConfirmation.resx">
+      <DependentUpon>BookingConfirmation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CancelReservation.resx">
+      <DependentUpon>CancelReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageBusForm.resx">
+      <DependentUpon>ManageBusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagePayments.resx">
+      <DependentUpon>ManagePayments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageReservations.resx">
+      <DependentUpon>ManageReservations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageUsers.resx">
+      <DependentUpon>ManageUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyReservationForm_history_.resx">
+      <DependentUpon>MyReservationForm_history_.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PassengerProfile.resx">
+      <DependentUpon>PassengerProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentForm.resx">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RecentPayments.resx">
+      <DependentUpon>RecentPayments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReservationForm.resx">
+      <DependentUpon>ReservationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchBusForm.resx">
+      <DependentUpon>SearchBusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserDashboard.resx">
+      <DependentUpon>UserDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0ce388b4e104d3107e1692bf3dabd1dc-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vecteezy_3d-user-icon-on-transparent-background_19465366.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9815472.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard-svg-icon-free-dashboard-icon-11553444664o1utwdkesz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-reservation-icon-png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-icon-on-transparent-.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2-Numbe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\number0_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\number-number-3-in-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\184-1849504_save-money-reservation-icon-png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reserve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-male-circle.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ticket1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0ce388b4e104d3107e1692bf3dabd1dc-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images-Photoroom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\22-223965_no-profile-picture-icon-circle-member-icon-png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\31-315891_calendar-blue-transparent-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\216-2163565_reports-data-calendar-icon-vector-red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hd-green-notification-bell-icon-transparent-png-701751695033961wdtvoho2bl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\credit-card-payment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reservetion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\booking-i.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin-profile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administrator-male.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administrator-male1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10-Number-PNG-Pic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10-Number-PNG-Pic1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue-bus-icon-14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3d-number-light-green-color1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3d-number-light-green-color2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10-Number-PNG-Pic2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white-and-yellow-number-36-3d-render-png1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\12538168.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-user-conference-people-icon-png-orange-11563196282yswvqr86rt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\611-6117512_booking-icon-font-awesome-clipart-png-download-calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue-bus-icon-141.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bus1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bus2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bus21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report1new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manage1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer-88.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hariya.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\worning.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payee1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payee1n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payment.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bus eka.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0ce388b4e104d3107e1692bf3dabd1dc-removebg-preview2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SharpZipLib\ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

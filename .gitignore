@@ -1,0 +1,18 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build output
+bin/
+obj/
+
+# NuGet packages
+packages/
+
+# Build files
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio cache
+*.cache
